@@ -1,14 +1,19 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace LotteryAPI.DTOs
 {
     public class GameDTO
     {
-        public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
-        public string Begin { get; set; }
-        public string End { get; set; }
+        public string PlayedAt { get; set; }
+        [NotMapped]
         public List<ParticipantDTO> Participants { get; set; }
+        [NotMapped]
         public List<PrizeDTO> Prizes { get; set; }
+        [NotMapped]
         public List<ParticipantDTO> Winners { get; set; }
     }
 }
